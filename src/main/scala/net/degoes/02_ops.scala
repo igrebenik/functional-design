@@ -389,7 +389,8 @@ object contact_processing {
       rename("fname", "full_name") +
       rename("street", "street_address") +
       rename("postal", "postal_code") +
-      delete("lname")
+      delete("lname") +
+      relocate("email_address", 1)
 
   val UserUploadSchema: SchemaCSV =
     SchemaCSV(List("email", "fname", "lname", "country", "street", "postal"))
